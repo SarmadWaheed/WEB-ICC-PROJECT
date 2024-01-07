@@ -27,45 +27,4 @@ admin folder resides inside same root folder go to admin folder and execute foll
 
 react app will start at localhost:3000/admin
 
-## Deploy
 
-This application is heroku ready you must declare three environment variables namely
-
-jwtPrivateKey
-
-db
-
-sessionSecret
-
-db will contain the connection string of your mongo db
-ideally you should create a project at http://mongodb.com and get a connection string from there.
-
-just copy the code in your own repo and link your heroku with this code.
-
-## Data integrity
-
-A Cron job runs at the server to refresh the data every 30 minutes.
-comment out
-
-> const { startCronJobs } = require("./croneJobs/index");
-
-to avoid data refresh
-
-## default user
-
-name:"usman",
-email:"admin@admin.com"
-password:"admin"
-roles:["admin","customer"]
-
-every user who has admin in its roles array will be able to modify the data.
-
-## caution
-
-locally react app will not be served from express. In order to do that you need to run following command from admin folder
-
-> npm run build
-
-## info
-
-Live version is hosted at https://fullstack-usman.herokuapp.com/
